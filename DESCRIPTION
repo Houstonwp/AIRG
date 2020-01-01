@@ -1,11 +1,11 @@
 Package: AIRG
 Type: Package
-Title: What the Package Does in One 'Title Case' Line
+Title: An R replication of the Academy's Interest Rate Generator
 Version: 1.0
 Date: 2020-01-01
-Author: Your Name
-Maintainer: Your Name <your@email.com>
-Description: One paragraph description of what the package does as one or more full sentences.
+Author: Houston Perrett
+Maintainer: Houston Perrett <hp@houstonp.com>
+Description: Generate interest rate scenarios using R based on the American Academy of Actuaries's interest rate generator.
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.3)
 LinkingTo: Rcpp
