@@ -14,8 +14,8 @@ generate_stochastics <- function(months, processes=3){
 
 #' Correlate Stochastics
 #'
-#' @param stochastics 
-#' @param correlation 
+#' @param stochastics A matrix
+#' @param correlation A square matrix with size the number of processes in the stochastic matrix.
 #'
 #' @return A correlated MxN matrix of stochastic random variables
 #' @export
