@@ -7,9 +7,9 @@
 correlate_stochastics(stochastics, correlation)
 }
 \arguments{
-\item{stochastics}{}
+\item{stochastics}{A matrix}
 
-\item{correlation}{}
+\item{correlation}{A square matrix with size the number of processes in the stochastic matrix.}
 }
 \value{
 A correlated MxN matrix of stochastic random variables

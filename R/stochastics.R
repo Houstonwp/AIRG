@@ -1,5 +1,7 @@
 #' Generate Stochastics
 #'
+#' @importFrom stats rnorm
+#'
 #' @param months An integer of the number of projection months.
 #' @param processes Defaults to three stochastic processes.
 #'
