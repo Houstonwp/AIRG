@@ -5,3 +5,6 @@
 ^codecov\.yml$
 ^\.covrignore$
 ^README\.Rmd$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
