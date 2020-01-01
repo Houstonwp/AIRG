@@ -11,3 +11,7 @@ Imports: Rcpp (>= 1.0.3)
 LinkingTo: Rcpp
 URL: https://github.com/Houstonwp/AIRG
 BugReports: https://github.com/Houstonwp/AIRG/issues
+Depends: 
+    R (>= 3.2)
+Suggests: 
+    covr
