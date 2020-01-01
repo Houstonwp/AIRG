@@ -18,5 +18,5 @@ A matrix of interest rates
 Get Rates
 }
 \examples{
-get_rates(matrix(c(1,1,0.8241999,0.1249581),nrow=2),matrix(c(0.029128892,-0.003432289),nrow=2))
+get_rates(matrix(c(0.029128892,-0.003432289),nrow=2),matrix(c(1,1,0.8241999,0.1249581),nrow=2))
 }

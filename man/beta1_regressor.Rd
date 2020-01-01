@@ -12,7 +12,7 @@ beta1_regressor(maturity, lambda = 0.4)
 \item{lambda}{A number between 0 and 1. Defaults to 0.4 as is given by the Academy's generator.}
 }
 \value{
-A numeric vector giving the \Beta_1 regressor for the Nelson-Siegel Yield Curve interpolation.
+A numeric vector giving the Beta_1 regressor for the Nelson-Siegel Yield Curve interpolation.
 }
 \description{
 Beta_1 Regressor

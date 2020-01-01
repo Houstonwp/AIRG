@@ -3,7 +3,7 @@
 #' @param maturity A number. Should be represented as years, e.g. 3 months = 0.25 years.
 #' @param lambda A number between 0 and 1. Defaults to 0.4 as is given by the Academy's generator.
 #'
-#' @return A numeric vector giving the \Beta_1 regressor for the Nelson-Siegel Yield Curve interpolation.
+#' @return A numeric vector giving the Beta_1 regressor for the Nelson-Siegel Yield Curve interpolation.
 #' @export
 #'
 #' @examples
@@ -18,7 +18,7 @@ beta1_regressor <- function(maturity, lambda=0.4){
 #'
 #' @param maturities A number or numeric vector. Should be represented as years, e.g. 3 months = 0.25 years.
 #'
-#' @return A matrix with length as number of maturities of Nelson-Siegel regressors of the form: \begin{bmatrix}1 \Beta_1 \end{bmatrix}
+#' @return A matrix with length as number of maturities of Nelson-Siegel regressors.
 #' @export
 #'
 #' @examples
@@ -54,7 +54,7 @@ get_factors <- function(short_rate, long_rate){
 #' @export
 #'
 #' @examples
-#' get_rates(matrix(c(1,1,0.8241999,0.1249581),nrow=2),matrix(c(0.029128892,-0.003432289),nrow=2))
+#' get_rates(matrix(c(0.029128892,-0.003432289),nrow=2),matrix(c(1,1,0.8241999,0.1249581),nrow=2))
 get_rates <- function(factors, regressors){
   regressors %*% factors
 }

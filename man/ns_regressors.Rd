@@ -10,7 +10,7 @@ ns_regressors(maturities)
 \item{maturities}{A number or numeric vector. Should be represented as years, e.g. 3 months = 0.25 years.}
 }
 \value{
-A matrix with length as number of maturities of Nelson-Siegel regressors of the form: \begin{bmatrix}1 \Beta_1 \end{bmatrix}
+A matrix with length as number of maturities of Nelson-Siegel regressors.
 }
 \description{
 Nelson-Siegel Regressors
