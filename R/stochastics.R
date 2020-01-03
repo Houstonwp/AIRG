@@ -5,23 +5,34 @@
 #' @param months An integer of the number of projection months.
 #' @param processes Defaults to three stochastic processes.
 #'
-#' @return An MxN matrix of stochastic random variables
+#' @return An MxN matrix of stochastic random variables where M = months and N = processes
 #' @export
 #'
 #' @examples
-#' generate_stochastics(3,360)
+#' generate_stochastics(360,3)
 generate_stochastics <- function(months, processes=3){
+  if (months < 1) stop(paste0("The number of projection months must be greater than 0; Not ",months,"."), call. = FALSE) 
+  if (processes < 1) stop(paste0("The number of stochastic processes must be greater than 0; Not ",processes,"."), call. = FALSE) 
+  
   matrix(rnorm(processes * months), nrow = months, ncol = processes)
 }
 
 #' Correlate Stochastics
+#' 
+#' Takes an MxN matrix A of randomly generated values and multiplies by the cholesky of an NxN matrix X, a correlation matrix.
 #'
 #' @param stochastics A matrix
 #' @param correlation A square matrix with size the number of processes in the stochastic matrix.
 #'
-#' @return A correlated MxN matrix of stochastic random variables
+#' @return A MxN matrix of correlated stochastic random variables
 #' @export
 #'
 correlate_stochastics <- function(stochastics, correlation){
+  stochastics <- as.matrix(stochastics)
+  correlation <- as.matrix(correlation)
+  
+  if (ncol(stochastics) != ncol(correlation)) stop("correlation must have the same number of columns as stochastic processes.")
+  if (nrow(correlation) != ncol(correlation)) stop("correlation must be a square matrix.")
+  
   stochastics %*% chol(correlation)
 }
