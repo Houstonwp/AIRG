@@ -24,7 +24,7 @@ beta1_regressor <- function(maturity, lambda=0.4){
 #' @examples
 #' ns_regressors(c(0.25,0.5,1,5,10,20,30))
 ns_regressors <- function(maturities){
-  matrix(c(rep(1,length(maturities)),beta1_regressor(maturities)), ncol = 2)
+  cbind(1, beta1_regressor(maturities))
 }
 
 #' Get Nelson-Siegel Factors
@@ -34,15 +34,13 @@ ns_regressors <- function(maturities){
 #' @param short_rate The one year interest rate.
 #' @param long_rate The twenty year interest rate.
 #'
-#' @return b_0 and b_1 factors are calculated by solving A*x=B for x.
+#' @return b_0 and b_1 factors are calculated by solving A*x=b for x.
 #' @export
 #'
 #' @examples
 #' get_factors(0.0263,0.0287)
-get_factors <- function(short_rate, long_rate){
-  rates <- matrix(c(short_rate,long_rate))
-  regressions <- matrix(c(1,1,beta1_regressor(1),beta1_regressor(20)),nrow = 2) 
-  solve(regressions, rates)
+fit_parameters <- function(b,A){
+  solve(A, b)
 }
 
 #' Get Rates
@@ -55,6 +53,6 @@ get_factors <- function(short_rate, long_rate){
 #'
 #' @examples
 #' get_rates(matrix(c(0.029128892,-0.003432289),nrow=2),matrix(c(1,1,0.8241999,0.1249581),nrow=2))
-get_rates <- function(factors, regressors){
+interpolate_rates <- function(factors, regressors){
   regressors %*% factors
 }
