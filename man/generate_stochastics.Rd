@@ -12,11 +12,11 @@ generate_stochastics(months, processes = 3)
 \item{processes}{Defaults to three stochastic processes.}
 }
 \value{
-An MxN matrix of stochastic random variables
+An MxN matrix of stochastic random variables where M = months and N = processes
 }
 \description{
 Generate Stochastics
 }
 \examples{
-generate_stochastics(3,360)
+generate_stochastics(360,3)
 }

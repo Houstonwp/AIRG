@@ -12,8 +12,8 @@ correlate_stochastics(stochastics, correlation)
 \item{correlation}{A square matrix with size the number of processes in the stochastic matrix.}
 }
 \value{
-A correlated MxN matrix of stochastic random variables
+A MxN matrix of correlated stochastic random variables
 }
 \description{
-Correlate Stochastics
+Takes an MxN matrix A of randomly generated values and multiplies by the cholesky of an NxN matrix X, a correlation matrix.
 }
