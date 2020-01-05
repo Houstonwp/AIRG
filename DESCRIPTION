@@ -7,7 +7,9 @@ Author: Houston Perrett
 Maintainer: Houston Perrett <hp@houstonp.com>
 Description: Generate interest rate scenarios using R based on the American Academy of Actuaries's interest rate generator.
 License: GPL (>= 2)
-Imports: Rcpp (>= 1.0.3)
+Imports: 
+    Rcpp (>= 1.0.3),
+    magrittr
 LinkingTo: Rcpp
 URL: https://github.com/Houstonwp/AIRG
 BugReports: https://github.com/Houstonwp/AIRG/issues
