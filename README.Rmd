@@ -32,7 +32,7 @@ devtools::install_github("Houstonwp/AIRG")
 ```
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+The following code generates a single 360 yield curve scenario:
 
 ```{r example}
 library(AIRG)
@@ -40,12 +40,33 @@ library(AIRG)
 maturities <- c(0.25,0.5,1,2,3,5,7,10,20,30)
 corr_matrix <- chol(matrix(c(1,-0.19197,0,-0.19197,1,0,0,0,1),nrow=3))
 
-generate_stochastics(360) %>% 
+yieldCurve_scenario <- generate_stochastics(360) %>% 
   correlate_stochastics(corr_matrix) %>% 
   generate_processes() %>% 
   generate_rates() %>% 
   fit_parameters(ns_regressors(c(1,20))) %>% 
   interpolate_rates(ns_regressors(maturities))
 ```
+
+
+
+```{r table}
+
+```
+
+
+```{r plot}
+library(tidyverse)
+
+rownames(yieldCurve_scenario)<- maturities
+
+yieldCurve <- as_tibble(t(yieldCurve_scenario)) %>% 
+  rownames_to_column(var = "projection_month") %>% 
+  mutate(projection_month = as.numeric(projection_month)) %>% 
+  pivot_longer(cols = -projection_month, names_to = "maturity", values_to = "rate")
+
+ggplot(yieldCurve, aes(x=projection_month, y = rate)) + geom_line(aes(color=maturity))
+```
+
 
 
