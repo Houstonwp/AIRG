@@ -14,7 +14,7 @@ generate_stochastics <- function(months, processes=3){
   if (months < 1) stop(paste0("The number of projection months must be greater than 0; Not ",months,"."), call. = FALSE) 
   if (processes < 1) stop(paste0("The number of stochastic processes must be greater than 0; Not ",processes,"."), call. = FALSE) 
   
-  Matrix(rnorm(processes * months), nrow = processes)
+  Matrix::Matrix(rnorm(processes * months), nrow = processes)
 }
 
 #' Correlate Stochastics
