@@ -5,19 +5,46 @@
 
 using namespace Rcpp;
 
-// rcpp_hello_world
-List rcpp_hello_world();
-RcppExport SEXP _AIRG_rcpp_hello_world() {
+// generate_processes
+NumericMatrix generate_processes(const NumericMatrix N, const double short_rate, const double long_rate, const double beta_i, const double beta_alpha, const double beta_nu, const double tau_i, const double tau_alpha, const double tau_nu, const double sigma_i, const double sigma_alpha, const double sigma_nu, const double phi, const double psi, const double theta);
+RcppExport SEXP _AIRG_generate_processes(SEXP NSEXP, SEXP short_rateSEXP, SEXP long_rateSEXP, SEXP beta_iSEXP, SEXP beta_alphaSEXP, SEXP beta_nuSEXP, SEXP tau_iSEXP, SEXP tau_alphaSEXP, SEXP tau_nuSEXP, SEXP sigma_iSEXP, SEXP sigma_alphaSEXP, SEXP sigma_nuSEXP, SEXP phiSEXP, SEXP psiSEXP, SEXP thetaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rcpp_hello_world());
+    Rcpp::traits::input_parameter< const NumericMatrix >::type N(NSEXP);
+    Rcpp::traits::input_parameter< const double >::type short_rate(short_rateSEXP);
+    Rcpp::traits::input_parameter< const double >::type long_rate(long_rateSEXP);
+    Rcpp::traits::input_parameter< const double >::type beta_i(beta_iSEXP);
+    Rcpp::traits::input_parameter< const double >::type beta_alpha(beta_alphaSEXP);
+    Rcpp::traits::input_parameter< const double >::type beta_nu(beta_nuSEXP);
+    Rcpp::traits::input_parameter< const double >::type tau_i(tau_iSEXP);
+    Rcpp::traits::input_parameter< const double >::type tau_alpha(tau_alphaSEXP);
+    Rcpp::traits::input_parameter< const double >::type tau_nu(tau_nuSEXP);
+    Rcpp::traits::input_parameter< const double >::type sigma_i(sigma_iSEXP);
+    Rcpp::traits::input_parameter< const double >::type sigma_alpha(sigma_alphaSEXP);
+    Rcpp::traits::input_parameter< const double >::type sigma_nu(sigma_nuSEXP);
+    Rcpp::traits::input_parameter< const double >::type phi(phiSEXP);
+    Rcpp::traits::input_parameter< const double >::type psi(psiSEXP);
+    Rcpp::traits::input_parameter< const double >::type theta(thetaSEXP);
+    rcpp_result_gen = Rcpp::wrap(generate_processes(N, short_rate, long_rate, beta_i, beta_alpha, beta_nu, tau_i, tau_alpha, tau_nu, sigma_i, sigma_alpha, sigma_nu, phi, psi, theta));
+    return rcpp_result_gen;
+END_RCPP
+}
+// generate_rates
+NumericMatrix generate_rates(const NumericMatrix N);
+RcppExport SEXP _AIRG_generate_rates(SEXP NSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const NumericMatrix >::type N(NSEXP);
+    rcpp_result_gen = Rcpp::wrap(generate_rates(N));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_AIRG_rcpp_hello_world", (DL_FUNC) &_AIRG_rcpp_hello_world, 0},
+    {"_AIRG_generate_processes", (DL_FUNC) &_AIRG_generate_processes, 15},
+    {"_AIRG_generate_rates", (DL_FUNC) &_AIRG_generate_rates, 1},
     {NULL, NULL, 0}
 };
 
