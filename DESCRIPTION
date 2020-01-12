@@ -5,8 +5,7 @@ Version: 1.0
 Date: 2020-01-01
 Author: Houston Perrett
 Maintainer: Houston Perrett <hp@houstonp.com>
-Description: Generate interest rate scenarios using R based on the American Academy of Actuaries's interest rate generator.
-License: GPL (>= 2)
+Description: Generate interest rate scenarios based on the American Academy of Actuaries's interest rate generator.
 License: MIT + file LICENSE
 Imports: 
     Rcpp (>= 1.0.3),
