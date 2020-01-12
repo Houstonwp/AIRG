@@ -9,12 +9,12 @@ test_that("generate_stochastics gives errors", {
 
 test_that("correlate_stochastics gives errors", {
   stochastics <- matrix(rep(1,12),nrow=3)
-  corr <- matrix(c(1,0,0,0,1,0,0,0,1), nrow = 3)
+  corr <- matrix(c(1,0,0,0,1,0,0,0,1), nrow=3)
   
   expect_error(correlate_stochastics(stochastics,corr))
   
-  stochastics <- matrix(rep(1,12),nrow=4)
-  corr <- matrix(c(1,0,0,0,1,0,0,0,1), nrow = 1)
+  stochastics <- matrix(rep(1,12),ncol=3)
+  corr <- matrix(c(1,0,0,0,1,0,0,0,1,1,1,1), ncol=3)
   
   expect_error(correlate_stochastics(stochastics,corr))
 })
