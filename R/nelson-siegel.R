@@ -22,8 +22,8 @@ beta1_regressor <- function(maturity, lambda=0.4){
 #' @export
 #'
 #' @examples
-#' ns_regressors(c(0.25,0.5,1,5,10,20,30))
-ns_regressors <- function(maturities){
+#' get_regressor(c(0.25,0.5,1,5,10,20,30))
+get_regressor <- function(maturities){
   cbind(1, beta1_regressor(maturities))
 }
 
