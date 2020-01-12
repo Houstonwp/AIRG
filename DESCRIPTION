@@ -9,7 +9,6 @@ Description: Generate interest rate scenarios using R based on the American Acad
 License: GPL (>= 2)
 Imports: 
     Rcpp (>= 1.0.3),
-    magrittr,
     Matrix
 LinkingTo: Rcpp
 URL: https://github.com/Houstonwp/AIRG
